@@ -1,4 +1,6 @@
 # Space Exploration Demo
+## Requirements
+Unreal Engine 5.2
 
 ## How To Play
 ### Gameplay
