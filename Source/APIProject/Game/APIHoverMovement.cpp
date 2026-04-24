@@ -26,7 +26,7 @@ void UAPIHoverMovement::BeginPlay()
 	Player = Cast<AAPIPlayer>(GetOwner());
 	APlayerController* PC = Cast<APlayerController>(Player->GetController());
 
-	// Enhanced input binding (this is all stupid)
+	// Enhanced input binding 
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer());
 	Subsystem->AddMappingContext(MappingContext, 0);
 	UEnhancedInputComponent* PawnInputComp = Cast<UEnhancedInputComponent>(Player->InputComponent);

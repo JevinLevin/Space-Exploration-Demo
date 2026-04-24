@@ -32,7 +32,6 @@ void AAPIPlanet::BeginPlay()
 
 	// Calculates planet gravity based off size
 	Gravity *= (GetActorScale().X/125)*100;
-	//PRINT("%f",OrbitSpeed);
 
 	// Intitialises variables
 	DeltaSpinRotation = FRotator::ZeroRotator;

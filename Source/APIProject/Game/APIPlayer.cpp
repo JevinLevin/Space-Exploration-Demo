@@ -105,7 +105,8 @@ void AAPIPlayer::Tick(float DeltaTime)
 		GravityDirection = FVector::Zero();
 	}
 
-	if(CheckingPlanet) LocatePlanet();
+	if(CheckingPlanet) 
+		LocatePlanet();
 
 	if(CheckGround() && !OnGround)
 	{
@@ -241,8 +242,6 @@ void AAPIPlayer::LocatePlanet()
 		// Casts planet actor now to avoid doing it twice
 		AAPIPlanet* TempPlanet = Cast<AAPIPlanet>(Planets[i]);
 
-		//PRINT("%s", *Planets[i]->GetActorLocation().ToString());
-
 		// Finds distance between player and planet
 		const float NewDistance = FVector::Distance(GetActorLocation(), TempPlanet->GetActorLocation());
 
@@ -284,11 +283,8 @@ void AAPIPlayer::LocatePlanet()
 
 		GravityDirection = -GetActorUpVector();
 	}
-	//PRINT("%s", *NewPivot.ToString());
 	if(NewPlanet != CurrentPlanet)
 	{
-		//PRINT("NEW PLANET");
-
 		// If switching planet to planet
 		if(OnPlanet)
 			ZVelocity = -ZVelocity / 2;
@@ -355,9 +351,6 @@ bool AAPIPlayer::CheckGround() const
 	 
 	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, ECC_Visibility, QueryParams);
 	 
-	//DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 10.0f);
-	//UE_LOG(LogTemp, Log, TEXT("Tracing line: %s to %s"), *TraceStart.ToCompactString(), *TraceEnd.ToCompactString());
-
 	// If the planet it lands on isnt the current planet then something has gone wrong
 	// (implemented to specifically stop crashes when colliding with sun)
 	if(Hit.GetActor() != CurrentPlanet) return false;

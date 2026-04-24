@@ -48,7 +48,6 @@ void UAPIBoostMovement::PostLoad()
 
 void UAPIBoostMovement::StartBoost(const FInputActionValue& Value)
 {
-	//PRINT("START BOOST");
 	BoostState = BoostStart;
 	BoostDuration = 0.0f;
 	StartBoostPower = CurrentBoostPower;
@@ -57,8 +56,6 @@ void UAPIBoostMovement::StartBoost(const FInputActionValue& Value)
 
 void UAPIBoostMovement::StopBoost(const FInputActionValue& Value)
 {
-	//PRINT("STOP BOOST");
-	
 	BoostState = BoostStop;
 	BoostDuration = 0.0f;
 	StartBoostPower = CurrentBoostPower;
