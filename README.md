@@ -1,6 +1,6 @@
 # Space Exploration Demo
 
-https://github.com/user-attachments/assets/04c8a190-b72f-42b0-a5ef-553275a4bd6b
+https://github.com/user-attachments/assets/1de46c7f-5da0-48a7-8f7f-55f3373e53d2
 
 ## Requirements
 Unreal Engine 5.2
